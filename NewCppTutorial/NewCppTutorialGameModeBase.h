@@ -1,11 +1,14 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Epic Games, Inc. All Rights Reserved.
 
 #pragma once
 
 #include "CoreMinimal.h"
+
 #include "GameFramework/GameModeBase.h"
 #include "GameFramework/DefaultPawn.h"
-#include "XPPawn.h"
+
+#include "XPCharacter.h"
+
 #include "NewCppTutorialGameModeBase.generated.h"
 
 /**
@@ -15,11 +18,11 @@ UCLASS()
 class NEWCPPTUTORIAL_API ANewCppTutorialGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+
 public:
 	void InitGameState() override;
 
 private:
 	UPROPERTY(EditAnywhere, NoClear)
-	TSubclassOf<AXPPawn> CustomXPPawnClass = AXPPawn::StaticClass();
+	TSubclassOf<AXPCharacter> CustomXPCharacterClass = AXPCharacter::StaticClass();
 };
